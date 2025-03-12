@@ -26,7 +26,7 @@
  *
  * Example :
  *
- * let json = {
+ * let json = '{
  * "String" : "Mohamed Nour",
  * "Number" : 100,
  * "Object" : {
@@ -36,7 +36,7 @@
  * "Array" : ["Ahmad", "Nour", "Ali"],
  * "Boolean" : true,
  * "Null" : null
- * };
+ * }';
  */
 
 // Lesson 3
