@@ -242,3 +242,23 @@ form1.addEventListener("submit", function (e) {
 ?>
 */
 // When You Want To Send File,It Will Save In The Same Directory For Project
+
+// 4 - Make API Give Me Results Automaticlly Without Any Button ( Refresh|Refetch_Data)
+/*
+  Only In JavaScript Put setInterval(function, timer)
+  ===================================================
+  setInterval(function() {
+    fetch("https://api.github.com/users/nourmohamd/repos")
+  .then((resolved) => {
+    return resolved.json();
+  })
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i].id);
+    }
+  })
+  .catch((reason) => {
+    console.log(reason);
+  });
+  }, 1000);
+*/
