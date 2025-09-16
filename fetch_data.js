@@ -262,3 +262,28 @@ form1.addEventListener("submit", function (e) {
   });
   }, 1000);
 */
+
+// 5 - Controll With Number Of Result That Come From API TO Show It In User Interface
+/*
+fetch("https://api.github.com/users/nourmohamd/repos")
+  .then((resolved) => {
+    return resolved.json();
+  })
+  .then((data) => {
+    // Either ===> For Get Only 5 Result
+    for (let i = 0; i < 6; i++) {
+      console.log(data[i].id);
+    }
+    // Or ===> Also For Get 5 Result
+    for(let i in data) {
+      if(i <= 5) {
+        console.log(data[i].id);
+      } else {
+        break;
+    }
+  }
+  })
+  .catch((reason) => {
+    console.log(reason);
+  });
+*/
