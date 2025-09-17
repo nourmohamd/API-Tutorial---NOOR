@@ -287,3 +287,19 @@ fetch("https://api.github.com/users/nourmohamd/repos")
     console.log(reason);
   });
 */
+
+// 6 - Get Result As Reverse Data From DataBase By API
+/*
+fetch("https://api.github.com/users/nourmohamd/repos")
+  .then((resolved) => {
+    return resolved.json();
+  })
+  .then((data) => {
+    data.reverse();
+    console.log(data);
+  }
+  })
+  .catch((reason) => {
+    console.log(reason);
+});
+*/
