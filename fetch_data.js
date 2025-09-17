@@ -303,3 +303,40 @@ fetch("https://api.github.com/users/nourmohamd/repos")
     console.log(reason);
 });
 */
+
+// 7 - Methods You Need It During Work With JSON
+// All You Need To Know It About API in Back-End << Server - Side >>
+// Methods Work With JSON
+// Example:
+// $json = '{"name":"Mohamed Nour", "age":"24"}';
+// echo $json;
+// 1 - Convertation Json To Object
+// $data_not_json = json_decode($json);
+// echo $data_not_json->name; // Mohamed Nour
+// 2 - Convertation Json To Array
+// $data_array = json_decode($json, true);
+// echo $data_array["name"]; // Mohamed Nour
+// 3 - Convertation Array Or Object To JSON
+// $arr = array("username" => "Mohamed Nour", "age" => 24);
+// $json2 = json_encode($arr);
+// print_r($json2);
+// Always Use print_r() For Print << JSON >>
+// 4 - Type Of Error In JSON
+// json_last_error(); ===> يستخدم بعد تعريف الجيسون مباشرة ولا يستقبل بارميتر
+/*
+The Number That Return From json_last_error
+0 JSON_ERROR_NONE
+1 JSON_ERROR_DEPTH
+2 JSON_ERROR_STATE_MISMATCH
+3 JSON_ERROR_CTRL_CHAR
+4 JSON_ERROR_SYNTAX
+5 JSON_ERROR_UTF8
+6 JSON_ERROR_RECURSION
+7 JSON_ERROR_INF_OR_NAN
+8 JSON_ERROR_UNSUPPORTED_TYPE
+*/
+// Example:
+// $json = '{"name":"Mohamed Nour", "age":"24"}';
+// echo json_encode($json);
+// $error = json_last_error();
+// echo $error;
