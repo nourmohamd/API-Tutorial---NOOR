@@ -342,6 +342,7 @@ The Number That Return From json_last_error
 // echo $error;
 
 // 8 - Make A Search Box For Search About Data In DataBase
+// This Idea Is Very Important Where You Don't Have API <GET>
 /*
 //////////// 1 - PHP
 <?php
@@ -381,6 +382,64 @@ header("Access-Control-Allow-Origin: *");
                 if (el.content.includes(value_search.value)) { // optional: use includes instead of search
                   console.log(el.content);
                 }
+              });
+            })
+            .catch(error => console.error("Error fetching data:", error)); // optional: error handling
+        };
+      </script>
+    </body>
+  </html>
+  
+*/
+
+// 9 - Make A Search Box For Search About Data In DataBase
+// This Idea Is Very Important Where You Have API ( Put The Rules In API FILES For Search <POST>)
+/*
+//////////// 1 - PHP
+<?php
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Type: application/json; charset=UTF-8");
+  header("Access-Control-Allow-Methods: POST");
+  header("Access-Control-Max-Age: 3600");
+  header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+  
+  // Connect To DataBase
+  $host = 'localhost';         // or your server IP
+  $dbname = 'your_database';   // replace with your database name
+  $user = 'your_username';     // replace with your DB username
+  $pass = 'your_password';     // replace with your DB password
+  $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+  
+  // Catch Data From Client-Side
+  $data = file_get_contents("php://input");
+  $data = json_decode($data);
+
+  // Get Data From DataBase
+  $sql = $db->prepare("SELECT * FROM `product` WHERE content LIKE :D");
+  $s = "%".$data->value."%";
+  $sql->bindParam("D", $s);
+  $sql = $sql->fetchAll();
+  print_r(json_encode($sql)); // Here in this line the server-side sends a data to client-side As ( Object Not Array )
+  ?>
+  //////////// 2 - HTML And JS
+  <html>
+    <head>
+    </head>
+    <body>
+      <input type="search" name="value_search" class="A"/>
+      <button type="button" id="btn">Search</button>
+      <script>
+        let btn = document.getElementById("btn");
+        let value_search = document.getElementsByClassName("A")[0];
+        btn.onclick = function() {
+          fetch("file_api.php", {
+          method: 'POST',
+          body: JSON.stringify({value: value_search.value})
+          })
+            .then(response => response.json())
+            .then((data) => {
+              data.forEach((el) => {
+                  console.log(el.content);
               });
             })
             .catch(error => console.error("Error fetching data:", error)); // optional: error handling
