@@ -449,3 +449,12 @@ header("Access-Control-Allow-Origin: *");
   </html>
   
 */
+
+// 10 - Types Of API
+/*
+1 - API ===> This type use for create a bride between client-side and server-side
+
+2 - REST API ===> This type use for connect to database for make operation such as ( GET, POST, DELETE, ADD, PUT )
+
+3 - RESTFULL API ===> This type use for connect to database for make operation such as ( GET, POST, DELETE, ADD, PUT )
+*/
