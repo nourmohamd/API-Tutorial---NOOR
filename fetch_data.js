@@ -29,7 +29,7 @@ fetch("https://api.github.com/users/nourmohamd/repos")
   });
 
 // How can you get api from playlist on youtube channal:
-// 1 - Go to https://developers.google.com/youtube/v3/docs/playlistItems/list#usage
+// 1 - Go to https://developers.google.com/youtube/v3/docs/playlistItems/list#usage || Search About "playlists youtube api" In Google
 // 2 - Make URL Same as down:
 /*
 https://www.googleapis.com/youtube/v3/playlistItems
@@ -40,7 +40,7 @@ playlistId=رابط السلسلة من اليوتيوب
 &
 maxResults=0-->50
 &
-key=key from << Console Developers Google >> ---> Build Project 
+key=key from << Google Developer Console >> ---> Build Project 
 And Enable Youtube Api Then Create Credentials And Copy The Key
 
 Example:
